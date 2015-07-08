@@ -1,2 +1,2 @@
 # angular-site
-site built with angularness
+site built with angularjs
