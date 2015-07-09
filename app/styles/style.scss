@@ -1,0 +1,91 @@
+$bg-color: #474443;
+$content-color: #FFFFFF;
+$link-link: white;
+$link-visited: antiquewhite;
+$link-hover: aliceblue;
+$link-active: azure;
+$name-content-padding: 0.1em;
+$image-content-padding: 0.2em;
+
+@mixin content ($padding: none) {
+  padding: $padding;
+}
+
+html {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  /* #676565,#474444,#2b2727 */
+  background-color: $bg-color;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+a:link {
+  color: $link-link;
+}
+
+a:visited {
+  color: $link-visited;
+}
+
+a:hover {
+  color: $link-hover;
+}
+
+a:active{
+  color: $link-active;
+}
+
+.page {
+  opacity: 0;
+}
+
+.wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1420px;
+  width: 100%;
+
+  &.wrapper:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    margin-right: -0.25em;
+    vertical-align: middle;
+  }
+}
+
+.contentObj {
+  color: $content-color;
+  display: block;
+
+  &.contentObj .contentObj--name {
+    @include content($name-content-padding);
+    float: left;
+    font-size: 2em;
+    font-family: sans-serif;
+    font-weight: 100;
+    position: absolute;
+    width: 100%;
+  }
+
+  &.contentObj .contentObj--img {
+    @include content($image-content-padding);
+    float: right;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width: 30%;
+  }
+}
